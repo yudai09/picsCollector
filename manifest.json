@@ -1,25 +1,33 @@
 {
-  "name": "picsCollector",
-  "version": "0.0.0", 
-  "description": "This extension shows pictures on a web page",
-  "icons": {"48": "resouces/photo-48x48.png"},
-  "browser_action": {
-    "default_icon": "resouces/photo-48x48.png",
-    "default_title": "picsCollector",
-    "default_popup": "popup.html"
-  },
- "content_scripts": [
-     {
-      "matches": ["http://*/*", "https://*/*", "file://*/*", "ftp://*/*" ],
-      "all_frames":true, 
-      "js": [
+    "name": "picsCollector",
+    "version": "0.0.0", 
+    "description": "This extension shows pictures on a web page",
+    "icons": {"48": "resouces/photo-48x48.png"},
+    "browser_action": {
+	"default_icon": "resouces/photo-48x48.png",
+	"default_title": "picsCollector"
+    },
+    "content_scripts": [
+	{
+	    "matches": ["http://*/*", "https://*/*", "file://*/*", "ftp://*/*" ],
+	    "all_frames":true, 
+	    "js": [
 		"foreground.js",
-		"picsCollector.js"
-             ],
-      "run_at": "document_start"
-    }
-   ],
-   "background_page": "background.html",
-   "permissions": [
-   ]
+		"picsCollector.js",
+		"jquery/jquery-1.7.2.js",
+		"jquery/jquery.masonry.js",
+		"jquery/jquery.wookmark.js"
+            ],
+	    "css": [
+		"style.css"
+	    ],
+	    "run_at": "document_start"
+	}
+    ],
+    "background": {
+     	"scripts": ["background.js"]
+    }, 
+    "permissions": [
+	"tabs", "http://*/*"
+    ]
 }

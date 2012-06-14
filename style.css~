@@ -1,0 +1,42 @@
+.picture {
+    width: 130px;
+    margin: 10px;  
+}
+.memo {
+    background-color: rgba(200, 200, 200, 1);
+    width: 150px;
+    font-size: 5px;
+    color: black;
+}
+
+html,body { height:100%; }
+
+.fixed {
+    background-repeat: repeat;
+    position: absolute;
+//    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+//    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#container{
+    overflow: "overflow-y";
+//    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    border:dotted 2px #666666;
+}
+
+.frame {
+//    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 150px;
+    margin: 5px;
+    float: left;
+}
+
+
+

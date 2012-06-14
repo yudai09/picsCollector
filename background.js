@@ -1,12 +1,14 @@
-chrome.extension.onRequest.addListener(
-  function(message, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    
-    switch(message.type){
-    default:
-    	sendResponse("hello");	
-    }
-  }
-);
+chrome.browserAction.onClicked.addListener(function(tab){
+    // executeScritの第一引数のデフォルト値はアクティブなタブのID
+    chrome.tabs.executeScript(tab.id, {code:'picsCollector.toggle();'});
+});
+// updateIcon();
+
+
+
+
+
+
+
+
+
